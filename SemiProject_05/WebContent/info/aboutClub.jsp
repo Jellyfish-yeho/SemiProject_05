@@ -42,7 +42,7 @@
 	<div style="width: 1000px; margin:0 auto; padding:5px;">
 	<div class="row">
 		<div class="col">
-			<img class="img-fluid" src="imges/Badminton.png"/>
+			<img class="img-fluid" src="imges/Badminton_name.png"/>
 		</div>
 	</div>
 	<div class="row">
@@ -75,17 +75,17 @@
 		<h1>High-Clear</h1><br>
 		<h2>About the Club</h2>
 			<p>
-				Badminton Club provides the opportunity for members to play badminton, to develop and improve their skills, and to participate in training and competitive matches in intramural tournaments. Players of all levels are welcome. Equipment can be provided for students who do not have their own (first come, first serve).
+				High-Clear Badminton Club provides the opportunity for members to play badminton, to develop and improve their skills, and to participate in training and competitive matches in intramural tournaments. Players of all levels are welcome. Equipment can be provided for students who do not have their own (first come, first serve).
 				All club members are expected to adhere to <span class="accent">COVID-19</span> provincial restrictions as well as rules in place at the badminton centre.
 			</p>
 		<h2>HOW TO JOIN?</h2>
-			<p>Badminton Club is active on Teams!
+			<p>High-Clear is active on Teams!
 			<a href="<%=request.getContextPath()%>/users/signupform.jsp">click here to join!</a>
 			</p>
 		<h2>Meetings</h2>
-			<p>when: Saturndays 7:30-9:00 pm<br>
-			Where: acorn academy, gangnam, seoul(Map & Directions)<br>
-			Sponsor: acorn academy</p>
+			<p>When: every Saturndays 7:30-9:00 pm<br>
+			Where: Acorn Academy, Gangnam, Seoul(Map & Directions)<br>
+			Sponsor: Acorn Academy</p>
 		</div>
 	</div>
 	<div class="row">
