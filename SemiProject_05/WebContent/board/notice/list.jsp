@@ -103,17 +103,17 @@
 <title>/Notice/list.jsp</title>
 <jsp:include page="../../include/resource.jsp"></jsp:include>
 <style>
-   .page-ui a{
-      text-decoration: none;
-      color: #000;
-   }
-   
+	body{
+		background-image: url();
+		background-repeat: round;
+	}
    .page-ui a:hover{
       text-decoration: underline;
+      color: rgb(2,38,94);
    }
    
    .page-ui a.active{
-      color: red;
+      color: rgb(2,38,94);
       font-weight: bold;
       text-decoration: underline;
    }
@@ -126,20 +126,38 @@
       float: left;
       padding: 5px;
    }
-   .container{
-   		border:1px dotted
-   }
+	h1 {
+		color: rgb(2,38,94); 
+		text-shadow:1px 1px 1px rgb(1,148,148); 
+		margin: 0; 
+		padding: 10px; 
+		font-weight: bold; 
+	}
+	th{
+		color: rgb(0,136,236); 
+	}
+	td{
+		color:rgb(2,38,94);
+		font-size: 1em; 
+	}
+	a{
+		color:rgb(2,38,94);
+		text-decoration: none;
+	}
 </style>
 </head>
 <body>
 <jsp:include page="../../include/navbar.jsp">
 	<jsp:param value="notice" name="thisPage"/>
 </jsp:include>
-<div class="container">
+<div style="width: 1000px; margin:0 auto; padding:5px;">
    <h1 class="text-center mt-3 mb-3">공지사항</h1>
    <%if(id!=null && id.equals("admin")){ %>
-         <a href="private/insertform.jsp">새글작성</a>
+          <a class="btn btn-success btn-sm me-2" 
+          href="<%=request.getContextPath()%>/board/notice/private/insertform.jsp">
+		 새글작성</a>
    <%} %>
+   
    <table class="table table-hover text-center">
       <thead>
          <tr>
@@ -162,7 +180,7 @@
       <%} %>
       </tbody>
    </table>
-   <div class="page-ui clearfix container" >
+   <div class="page-ui clearfix container">
       <ul>
          <%if(startPageNum != 1){ %>
             <li>
@@ -187,12 +205,9 @@
       </ul>
    </div>
 
-	 <div class="row">
+	 <div class="row mt-2 mb-2">
 	 	<div class="col-lg-5 col-md-6">
 	 	<form action="list.jsp" method="get"> 
-	 	<div class="form-group me-0" style="display: inline-block;">
-	 		<label class="input-group-text" for="condition">검색조건</label>
-	 	</div>
 	 	<div class="form-group" style="display: inline-block;">
 	 		<select class="form-select" name="condition" id="condition">
 	    		<option selected>선택</option>

@@ -12,25 +12,34 @@
 <head>
 <meta charset="UTF-8">
 <title>board/notice/private/updateform.jsp</title>
+<jsp:include page="../../../include/resource.jsp"></jsp:include>
+<style>
+   #content{
+      height: 500px;
+   }
+   h1 {
+		color: rgb(2,38,94); 
+		text-shadow:1px 1px 1px rgb(1,148,148); 
+		margin: 0; 
+		padding: 10px; 
+		font-weight: bold; 
+	}
+</style>
 </head>
 <body>
-<div class="container">
-   <h1>공지 수정 폼 입니다.</h1>
+<div class="container" style="width: 1000px; margin:0 auto; padding:5px;">
+   <h1 class="text-center mt-3 mb-3">공지 수정 폼</h1>
    <form action="update.jsp" method="post">
       <input type="hidden" name="num" value="<%=num %>" />
-      <div>
-         <label for="writer">작성자</label>
-         <input type="text" id="writer" value="<%=dto.getWriter() %>" disabled/>
-      </div>
-      <div>
+      <div class="text-center mt-3 mb-3">
          <label for="title">제목</label>
-         <input type="text" name="title" id="title" value="<%=dto.getTitle()%>"/>
+         <input class="w-50" type="text" name="title" id="title" value="<%=dto.getTitle()%>"/>
       </div>
       <div>
-         <label for="content">내용</label>
+         <label for="content" class="visually-hidden">내용</label>
          <textarea name="content" id="content"><%=dto.getContent() %></textarea>
       </div>
-      <button type="submit" onclick="submitContents(this);">수정확인</button>
+      <button class="btn btn-success" type="submit" onclick="submitContents(this);">수정확인</button>
    </form>
 </div>
 <!-- SmartEditor 에서 필요한 javascript 로딩  -->

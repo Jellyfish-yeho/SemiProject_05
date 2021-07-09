@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 <jsp:include page="../include/resource.jsp"></jsp:include>
 <style>
-		#container { 
-			width:820px; 
-			margin:0 auto;  
-			padding:5px;		
-			border:1px dotted
-		}
 		h1 {
 			color: rgb(2,38,94); 
 			text-shadow:1px 1px 1px rgb(1,148,148); 
@@ -54,7 +48,8 @@
 				하이클리어 배드민턴 클럽에서 베드민턴 기술을 연마하고<br>
 				다른 사람들과 죽음의 듀얼을 즐겨봅시다<br>				
 				초보자부터 숙련자까지 모두 환영합니다<br>
-				장비를 가지고오지 못한 분은 대여해드립니다<br>(수량이 한정 되어 있습니다. 모자르면 싸워서 뺏어쓰세요)<br>
+				장비를 가지고오지 못한 분은 대여해드립니다<br>
+				(수량이 한정 되어 있습니다. 모자르면 싸워서 뺏어쓰세요)<br>
 				병걸리면 나오지말고 집에 있어라<br>
 				<span class="accent">코비드바이러스</span> 방역 지침 잘지킴 믿어주세요!
 			</p>

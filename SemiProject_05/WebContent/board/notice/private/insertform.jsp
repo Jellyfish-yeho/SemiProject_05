@@ -10,21 +10,28 @@
    #content{
       height: 500px;
    }
+   	h1 {
+		color: rgb(2,38,94); 
+		text-shadow:1px 1px 1px rgb(1,148,148); 
+		margin: 0; 
+		padding: 10px; 
+		font-weight: bold; 
+	}
 </style>
 </head>
 <body>
-<div>
-   <h1>공지사항 작성 폼</h1>
+<div style="width: 1000px; margin:0 auto; padding:5px;" >
+   <h1 class="text-center mt-3 mb-3">공지사항 작성 폼</h1>
    <form action="insert.jsp" method="post" id="insertForm">
-      <div>
+      <div class="text-center mt-3 mb-3">
          <label for="title">제목</label>
-         <input type="text" name="title" id="title"/>
+         <input class="w-50" type="text" name="title" id="title"/>
       </div>
-      <div>
-         <label for="content">내용</label>
+      <div class="form-floating">
+         <label for="content" class="visually-hidden">내용</label>
          <textarea name="content" id="content"></textarea>
       </div>
-      <button type="submit">저장</button>
+      <button class="btn btn-success" type="submit">저장</button>
    </form>
 </div>
 <%--

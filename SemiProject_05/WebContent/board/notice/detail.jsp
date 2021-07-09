@@ -18,6 +18,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/board/notice/private/detail.jsp</title>
+<jsp:include page="../../include/resource.jsp"></jsp:include>
 </head>
 <body>
 <div class="container">
@@ -54,8 +55,34 @@
       <%} %>
       
    </ul>
+   
+   <form class="row">
+	  <div class="col">
+	    <label for="inputEmail4" class="form-label">글번호</label>
+	    <input type="text" class="form-control" value="<%=dto.getNum() %>">
+	  </div>
+	  <div class="col">
+	    <label for="inputPassword4" class="form-label">작성자</label>
+	    <input type="text" class="form-control" value="<%=dto.getWriter() %>">
+	  </div>
+	  	  <div class="col">
+	    <label for="inputPassword4" class="form-label">조회수</label>
+	    <input type="text" class="form-control" value="<%=dto.getViewCount() %>">
+	  </div>
+	  	  <div class="col">
+	    <label for="inputPassword4" class="form-label">등록일</label>
+	    <input type="text" class="form-control" value="<%=dto.getRegdate() %>">
+	  </div>
+	  <div class="col-12">
+	    <label for="inputAddress" class="form-label">제목</label>
+	    <input type="text" class="form-control" value="<%=dto.getTitle() %>">
+	  </div>
+  </form>
+  
 </div>
 </body>
 </html>
+
+
 
 
