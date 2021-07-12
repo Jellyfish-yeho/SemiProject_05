@@ -1,4 +1,3 @@
-
 <%@page import="test.cafe.dao.CafeDao"%>
 <%@page import="test.cafe.dto.CafeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -26,17 +25,16 @@ CafeDto dto=CafeDao.getInstance().getData(num);
 </head>
 <div class="container my-4">
 	<h1 class="fw-bold my-4">글 수정</h1>
-	<form action="update.jsp" method="post" id="insertForm">
+	<form action="update.jsp" method="post" id="updateForm">
 		<input type="hidden" name="num" value="<%=num %>" />
+		<div>
+			<label class="form-label" for="writer">작성자</label>
+		</div>	
+		<div>
+			<input class="form-control form-control-sm" type="text" id="writer" value="<%=dto.getWriter() %>" disabled/>
+		</div>
 		<div class="d-flex d-inline-flex flex-column mb-3">
-			<div>
-				<label class="form-label" for="writer">작성자</label>
-			</div>	
-			<div>
-				<input class="form-control form-control-sm" type="text" id="writer" value="<%=dto.getWriter() %>" disabled/>
-			</div>
-		
-			<div class="mb-3">
+		<div class="mb-3">
 				<div>
 					<label class="form-label" for="category">분류</label>
 				</div>
@@ -47,7 +45,6 @@ CafeDto dto=CafeDao.getInstance().getData(num);
 					</select>
 				</div>
 			</div>	
-			
 			<div class="my-2">
 				<label class="form-label" for="title">제목</label>
 				<input class="form-control form-control-sm" type="text" name="title" id="title" value="<%=dto.getTitle()%>>"/>

@@ -3,94 +3,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Modal</title>
-    <style>
-        #modal.modal-overlay {
-            width: 380px;
-            height: 380px;
-            /*position: absolute;*/
+<meta charset="UTF-8">
+<title>popup2.jsp</title>
+<link rel="icon" href="${pageContext.request.contextPath}/images/shuttlecock_main.png" type="image/x-icon" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
+     /* The Modal (background) */
+     .modal {
+     	 	display: none; /* Hidden by default */
+      		position: fixed; /* Stay in place */
+            z-index: 0; /* Sit on top */
             left: 0;
             top: 0;
-            margin: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 30px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(1.5px);
-            -webkit-backdrop-filter: blur(1.5px);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
-        #modal .modal-window {
-            background: #ffffff;
-            box-shadow: 0 8px 20px 0 rgba( 31, 38, 135, 0.37 );
-            backdrop-filter: blur( 13.5px );
-            -webkit-backdrop-filter: blur( 13.5px );
-            border-radius: 10px;
-            border: 1px solid rgba( 255, 255, 255, 0.18 );
-            width: 380px;
-            height: 380px;
-            position: relative;
-            top: 0px;
-            padding: 0px;
-        }
-        #modal .title {
-            padding-left: 50px;
-            /*display: inline;*/
-            text-shadow: 1px 1px 2px gray;
-            color: #066D19;
-         
-        }
-        /*#modal .title h2 {
-            display: inline;
-        }*/
-        
-        #modal .close-area {
-            display: inline;
-            float: right;
-            padding-right: 10px;
-            cursor: pointer;
-            text-shadow: 1px 1px 2px gray;
-            color: green;
-        }
-        
-        #modal .content {
-            margin-top: 10px;
-            padding: 0px 0px;
-            /* text-shadow: 1px 1px 2px gray; */
-            color: white;
+    
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            position: center;
+            margin: 10% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 21%; /* Could be more or less, depending on screen size */                          
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <div id="lorem-ipsum"></div>
-    </div>
-    <div id="modal" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h3>배드민턴 용품 여름 세일</h3>
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+ 
+      <!-- Modal content -->
+      <div class="modal-content">
+      <p style="text-align: center;"><span style="font-size: 14pt;"><b><span style="color: green; font-size: 24pt;">*JOIN US~~*</span></b></span></p>
+      <a href="http://www.badmintonmart.com/shop/main/index.php"> <img src="<%=request.getContextPath() %>/images/notice.jpg" class="card-img-top" height=400px width=400px; />
+                </a>
+    <div style="cursor:pointer;background-color:#DDDDDD;text-align: center;padding-bottom: 10px;padding-top: 10px;" onClick="close_pop();">
+                <span class="pop_bt" style="font-size: 13pt;" >
+                     3초후 자동으로 사라집니다^^
+                </span>
             </div>
-            <div class="close-area">X</div>
-            <div class="content">
-                <p class="card-text">
-    	<a href="http://www.badmintonmart.com/shop/main/index.php"> <img src="<%=request.getContextPath() %>/images/201910016226_500.jpg" class="card-img-top" alt="..." height=280px width=260px; />
-		</a>
-    </p>      
-        </div>
-        </div>
+      </div>
+ 
     </div>
-    <script>
-    const loremIpsum = document.getElementById("lorem-ipsum")
-    fetch("index.jsp")
-        .then(response => response.text())
-        .then(result => loremIpsum.innerHTML = result)
-	const closeBtn = modal.querySelector(".close-area")
-	closeBtn.addEventListener("click", e => {
-    modal.style.display = "none"
-})
-    </script>
+        <!--End Modal-->
+ 
+ 
+    <script type="text/javascript">
+      
+        jQuery(document).ready(function() {
+                $('#myModal').show();
+        });
+        //팝업 Close 기능
+        function close_pop(flag) {
+             $('#myModal').hide();
+             
+        };
+        //3초후 자동으로 사라지기 
+        setTimeout(function() { $('#myModal').hide();}, 3000)
+
+      </script>
+
 </body>
 </html>
