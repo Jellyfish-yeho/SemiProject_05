@@ -257,7 +257,7 @@ public class GalleryDao {
 					"		FROM" + 
 					"		    (SELECT result1.*, ROWNUM AS rnum" + 
 					"		    FROM" + 
-					"		        (SELECT num,writer,title,content,imagePath,to_char(regdate,'yyyy-mm-dd HH24:MI') as regdate" + 
+					"		        (SELECT num,writer,title,content,imagePath,to_char(regdate,'yyyy-mm-dd HH24:MI') as regdate, likeCount" + 
 					"		        FROM board_gallery"+
 					"		        ORDER BY num DESC) result1)" + 
 					"		WHERE rnum BETWEEN ? AND ?";
@@ -277,6 +277,7 @@ public class GalleryDao {
 				dto2.setContent(rs.getString("content"));
 				dto2.setImagePath(rs.getString("imagePath"));
 				dto2.setRegdate(rs.getString("regdate"));
+				dto2.setLikeCount(rs.getInt("likeCount"));
 				list.add(dto2);
 			}
 		} catch (Exception e) {

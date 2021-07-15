@@ -39,6 +39,12 @@
     a{
    		cursor:pointer !important;
    }
+      .listProfile{
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid #cecece;
+      border-radius: 50%;
+   }
 </style>
 </head>
 <body>
@@ -61,7 +67,7 @@
 				        <% UsersDto dto1=UsersDao.getInstance().getData(dto.getWriter());
 				        if(dto1.getProfile()!=null){
 			            %>
-			            <img width="16" height="16" src="<%=request.getContextPath()%><%=dto1.getProfile()%>"/>
+			            <img class="listProfile" width="16" height="16" src="<%=request.getContextPath()%><%=dto1.getProfile()%>"/>
 			            <%}else{%>
 			            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="listProfile bi bi-person-circle" viewBox="0 0 16 16">
 							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
