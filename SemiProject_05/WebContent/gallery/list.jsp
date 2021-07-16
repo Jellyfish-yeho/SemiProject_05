@@ -53,6 +53,25 @@
 <title>갤러리</title>
 <link rel="icon" href="${pageContext.request.contextPath}/images/shuttlecock_main.png" type="image/x-icon" />
 <style>
+   .page-ui a{
+      text-decoration: none;
+      color: rgb(2,38,94);
+   }
+   
+   .page-ui a:hover{
+      text-decoration: underline;
+   }
+   
+   .page-ui a.active{
+      color: rgb(2,38,94);
+      font-weight: bold;
+      text-decoration: underline;
+   }
+   .page-ui ul{
+      list-style-type: none;
+      padding: 0;
+   }
+   
    .img-wrapper{
       height: 300px;
       transition: transform 0.3s ease-out;
@@ -148,7 +167,7 @@
          <%for(int i=startPageNum; i<=endPageNum ; i++){ %>
             <li class="page-item">
                <%if(pageNum == i){ %>
-                  <a class="page-link" href="list.jsp?pageNum=<%=i %>"><%=i %></a>
+                  <a class="page-link active" href="list.jsp?pageNum=<%=i %>"><%=i %></a>
                <%}else{ %>
                   <a class="page-link" href="list.jsp?pageNum=<%=i %>"><%=i %></a>
                <%} %>

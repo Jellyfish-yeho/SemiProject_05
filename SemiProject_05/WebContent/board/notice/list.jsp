@@ -203,7 +203,7 @@
          <%for(int i=startPageNum; i<=endPageNum ; i++){ %>
             <li class="page-item">
                <%if(pageNum == i){ %>
-                  <a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a>
+                  <a class="page-link active" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a>
                <%}else{ %>
                   <a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a>
                <%} %>
