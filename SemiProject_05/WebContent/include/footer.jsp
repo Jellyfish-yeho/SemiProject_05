@@ -142,7 +142,7 @@
 		margin-right: 3px;
 		margin-bottom: 5px;
 	}
-	@media (max-width: 880px) {
+	@media (max-width: 768px) {
 		.footer-distributed{
 			font: bold 14px sans-serif;
 		}

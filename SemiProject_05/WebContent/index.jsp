@@ -12,6 +12,7 @@
 <%@page import="notice.dto.NoticeDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%
 	//한 페이지에 몇개씩 표시할 것인지
 	final int PAGE_ROW_COUNT=5;
@@ -62,6 +63,7 @@
 	dto1.setStartRowNum(startRowNum);
 	dto1.setEndRowNum(endRowNum);
 	List<NoticeDto> list1=NoticeDao.getInstance().getList(dto1);
+	request.setAttribute("list1", list1);
 	
 	//갤러리 게시판
 	GalleryDto dto2=new GalleryDto();
@@ -182,17 +184,19 @@
 		         </tr>
 		      </thead>
 		      <tbody>
-	 	      <% for(NoticeDto tmpN:list1){%>
-		         <tr>
-		            <td><%=tmpN.getNum() %></td>
-		            <td>
-		               <a class="link-dark text-decoration-none fw-bold" 
-		               href="board/notice/detail.jsp?num=<%=tmpN.getNum()%>"><%=tmpN.getTitle() %></a>
-					</td>
-		            <td><%=tmpN.getRegdate() %></td>
-		            <td><%=tmpN.getViewCount() %></td>
-		         </tr>
-		      <% } %>				
+			      <c:forEach var="tmpN" items="${list1}">
+			      	<tr>
+			      		<td>${tmpN.num}</td>
+			      		<td>
+			      			<a class="link-dark text-decoration-none fw-bold" 
+			      			href="board/notice/detail.jsp?num=${tmpN.num}">
+			      				${tmpN.title}
+			      			</a>		      		
+			      		</td>
+			      		<td>${tmpN.regdate}</td>
+			      		<td>${tmpN.viewCount}</td>
+			      	</tr>
+			      </c:forEach>		
 		      </tbody>
 		     </table> 
 		</div>

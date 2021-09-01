@@ -67,4 +67,6 @@ CREATE TABLE board_gallery(
 
 CREATE SEQUENCE board_gallery_seq;
 
-
+CREATE TABLE board_like(
+	liked_user varchar2(100), 
+	liked_cafe NUMBER)
